@@ -1,0 +1,14 @@
+version: "3"
+services:
+  redis-server:
+    image: "redis"
+  tutum-app:
+     image: "tutum/hello-world"
+     ports:
+       - "7777:80"  
+  node-app:
+    restart: on-failure
+    build: .
+    ports:
+      - "4001:8081"
+
