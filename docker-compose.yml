@@ -4,6 +4,7 @@ services:
     image: "busybox"
     ports:
       - "4040:22"
+    command: ["/bin/sh"]
   redis-server:
     image: "redis"
   tutum-app:
