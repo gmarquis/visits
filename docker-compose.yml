@@ -6,14 +6,13 @@ services:
       - "4040:22"
     command: ["/bin/sh"]
   redis-server:
-    image: "redis"
-  tutum-app:
-     image: "tutum/hello-world"
-     ports:
-       - "7777:80"  
+    image: "redis"  
   node-app:
     restart: on-failure
     build: .
     ports:
       - "4001:8081"
-
+  tutum-app:
+     image: "tutum/hello-world"
+     ports:
+       - "7777:80"
